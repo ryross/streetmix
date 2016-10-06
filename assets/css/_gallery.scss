@@ -96,25 +96,40 @@ body:not(.safari).gallery-visible #street-section-sky {
     display: none !important;
   }
 
-  .streets {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-
-    white-space: nowrap;
+  // Applied by the wrapping element created by Scrollable.jsx component
+  .streets-scrollable-container {
+    height: $thumbnail-height + 20px; // To cover the scroll bar
 
     position: absolute;
+    top: 50px;
     left: 130px + 10px;
     right: 5px + 10px;
-    top: 50px;
-    height: $gallery-height + 20px; // To cover the scroll bar
-    overflow-x: scroll;
 
-    & > li {
+    button.scrollable {
+      margin-top: 38px;
+      z-index: $z-04-gallery-scroll
+    }
+  }
+
+  .streets {
+    //list-style: none;
+    //height: 110px;
+    position: absolute;
+    //top: -30px;
+    left: 0;
+    right: 0;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    //padding: 0;
+    //margin: 0;
+    white-space: nowrap;
+    //overflow-x: scroll;
+
+    & > .gallery-street {
       display: inline-block;
     }
 
-    & > li > a {
+    & > .gallery-street > a {
       display: inline-block;
 
       color: black;

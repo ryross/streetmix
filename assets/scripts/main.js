@@ -25,6 +25,7 @@ import MenusContainer from './menus/MenusContainer'
 import Palette from './app/Palette'
 import StreetNameCanvas from './streets/StreetNameCanvas'
 import DebugInfo from './app/DebugInfo'
+import Gallery from './gallery/Gallery'
 
 // Error tracking
 // Load this before all other modules. Only load when run in production.
@@ -51,6 +52,7 @@ setScaleForPhone()
 
 // Temp: mount React components
 ReactDOM.render(<MenusContainer />, document.getElementById('menus'))
+ReactDOM.render(<Gallery streets={[]} />, document.getElementById('gallery-wrap'));
 ReactDOM.render(<Palette />, document.getElementById('palette'))
 ReactDOM.render(<StreetNameCanvas allowEditing={!app.readOnly} />, document.getElementById('street-header'))
 ReactDOM.render(<DebugInfo />, document.getElementById('debug'))
